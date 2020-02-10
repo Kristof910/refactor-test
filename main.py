@@ -1,5 +1,14 @@
 def get_sum(a, b):
     if a < b:
+        low = a
+        high = b
+    elif a > b:
+        low = b
+        high = a
+    else:
+        return a
+
+    if a < b:
         i = a
         sum = 0
         while i <= b:
@@ -13,8 +22,6 @@ def get_sum(a, b):
             sum += i
             i += 1
         return sum
-    if a == b:
-        return a
 
 
 def main():
