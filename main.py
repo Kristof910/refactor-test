@@ -1,29 +1,16 @@
 # alternative: low, high = (a, b) if a < b else (b, a)
-#
+# alternative: put the while in a range
 
 def get_sum(a, b):
-    low = None
-    high = None
-    if a < b:
-        low = a
-        high = b
-    elif a > b:
-        low = b
-        high = a
-    else:
+    if a == b:
         return a
-    i = low
-    sum = 0
-    while i <= high:
-        sum += i
-        i += 1
-    return sum
+    low, high = (a, b) if a < b else (b, a)
+    return sum(range(low, high + 1))
 
 
 def main():
-    print(get_sum(10, 20))
-    print(get_sum(20, 10))
-    print(get_sum(35, 15))
+    print(get_sum(10, 20)) #165
+    print(get_sum(35, 15)) #525
 
 
 if __name__ == '__main__':
